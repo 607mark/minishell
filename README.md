@@ -41,10 +41,10 @@ Run the shell:
   - Returns accurate exit codes for commands/executables, maintaining Bash-like behavior.  
   - Captures the correct exit status in pipelines (`$?` reflects the last command in the pipeline).  
   - Detects signals and handles exit codes accordingly.
-  - - **Signals**:  replicates the functionality of Bash
-    - ctrl-C
-    - ctrl-D
-    - ctrl-\
+- **Signals**:  replicates the functionality of Bash
+  - ctrl-C
+  - ctrl-D
+  - ctrl-\
 
 ## **Testing and Debugging**  
 
