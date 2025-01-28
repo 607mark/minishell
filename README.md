@@ -33,12 +33,18 @@ Run the shell:
 ## **Features**  
 
 - **Tokenizer**: Input is tokenized gracefully, breaking it down into manageable pieces for seamless parsing and execution, even for complex commands
-- **Commands**: minishell can execute any command that is located in the directories specified in your $PATH
+- **Commands**: Minishell can execute any command that is located in the directories specified in your $PATH
 - **Pipes**: Combine commands using `|`
-- **Env varibles**: expands $VARNAME to a string that is stored in env. you can add and remove them with export, unset
+- **Env varibles**: Expands $VARNAME to a string that is stored in env. you can add and remove them with export, unset
 - **Redirections**: Input (`<`), Output (`>`), Append (`>>`), Heredoc (`<<`)  
-
----
+- **Exit Codes (`$?`)**:  
+  - Returns accurate exit codes for commands/executables, maintaining Bash-like behavior.  
+  - Captures the correct exit status in pipelines (`$?` reflects the last command in the pipeline).  
+  - Detects signals and handles exit codes accordingly.
+  - - **Signals**:  replicates the functionality of Bash
+    - ctrl-C
+    - ctrl-D
+    - ctrl-\
 
 ## **Testing and Debugging**  
 
