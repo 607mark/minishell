@@ -103,10 +103,4 @@ cat << EOF
 This is a heredoc example.
 EOF
 ```
-
----
-
-## **License**  
-This project is licensed under the [MIT License](LICENSE).  
-
 ---
