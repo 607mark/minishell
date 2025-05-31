@@ -1,9 +1,14 @@
+
+
 # **Minishell**  
 *"As beautiful as a shell"*  
 
 created by - [Anttoni](https://github.com/manttoni) and [Mark](https://github.com/607mark)  
 
 ---
+## **🧩 What Problem Does This Minishell Solve?**
+This minishell reimplements core shell behavior—parsing, tokenization, process forking, I/O redirection, and signal handling—using only low-level C functions. It addresses the challenge of managing child processes, handling edge cases like unclosed quotes or Ctrl+D, and executing built-in commands without relying on standard shell utilities.
+
 
 ## **Overview**  
 Minishell is a simple, lightweight Unix shell built from scratch. It replicates the basic functionality of Bash, offering:  
@@ -45,6 +50,44 @@ Run the shell:
   - ctrl-C
   - ctrl-D
   - ctrl-\
+
+## **Execution Flow Diagrahm**
+
+```mermaid
+flowchart TD
+    A[Start: main] --> B[init_main]
+    B --> C{init_main success?}
+    C -- No --> Z[Exit: free_main, clear_history]
+    C -- Yes --> D[Main Loop]
+    D --> E[handle_input]
+    E --> F{SIGQUIT/EOF?}
+    F -- Yes --> Z
+    F -- No --> G[unclosed_quotes?]
+    G -- Yes --> D
+    G -- No --> H[tokenize_string]
+    H --> I[create_list]
+    I --> J{cmd_list == NULL?}
+    J -- Yes --> D
+    J -- No --> K[run or ft_exit]
+    K --> L{ft_exit?}
+    L -- Yes --> Z
+    L -- No --> M[run]
+    M --> N[init_run]
+    N --> O{init_run success?}
+    O -- No --> P[finish_run]
+    P --> D
+    O -- Yes --> Q[Loop: For each command]
+    Q --> R{Is Builtin?}
+    R -- Yes --> S[run_builtin]
+    S --> Q
+    R -- No --> T[do_fork]
+    T --> U{fork success?}
+    U -- No --> P
+    U -- Yes --> V[run_child]
+    V --> Q
+    Q --> P
+    P --> D
+```
 
 ## **Testing and Debugging**  
 
