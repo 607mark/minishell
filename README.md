@@ -23,7 +23,7 @@ Minishell is a simple, lightweight Unix shell built from scratch. It replicates 
 ### **Installation**  
 Clone the repository:  
 ```bash
-git clone git@github.com:607mark/minishell.git
+git clone git clone git@github.com:manttoni/minishell.git
 cd minishell
 make
 ```
