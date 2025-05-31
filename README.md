@@ -7,7 +7,7 @@ created by - [Anttoni](https://github.com/manttoni) and [Mark](https://github.co
 
 ---
 ## **🧩 What Problem Does This Minishell Solve?**
-This minishell reimplements core shell behavior—parsing, tokenization, process forking, I/O redirection, and signal handling—using only low-level C functions. It addresses the challenge of managing child processes, handling edge cases like unclosed quotes or Ctrl+D, and executing built-in commands without relying on standard shell utilities.
+This minishell reimplements core shell behavior - parsing, tokenization, process forking, I/O redirection, and signal handling - using only low-level C functions. It addresses the challenge of managing child processes, handling edge cases like unclosed quotes or Ctrl+D, and executing built-in commands without relying on standard shell utilities.
 
 
 ## **Overview**  
